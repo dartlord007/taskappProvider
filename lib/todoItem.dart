@@ -11,10 +11,14 @@ class TodoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<taskProvider>(context);
-    final tasks = appState.todos;
+    final tasks = appState.todo;
     return ListView.builder(
       itemCount: tasks.length,
-      itemBuilder: itemBuilder,
+      itemBuilder: (context, index){
+        final todos = tasks[index];
+
+        return TodoUi(todoModel: todos); 
+      },
       );
   }
 }

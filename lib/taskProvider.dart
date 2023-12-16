@@ -17,6 +17,17 @@ class taskProvider extends ChangeNotifier{
     _textFieldController.clear();
   }
 
-  List<TodoModel> get getTodos => todos;
+  List<TodoModel> todo = [
+    TodoModel(
+      // createdTime: DateTime.now(),
+      title: 'Buy Food 😋',
+      description: '''- Eggs
+- Milk
+- Bread
+- Water''', 
+completed: false,
+    )];
+
+  List<TodoModel> get getTodos => todo;
   
 }
